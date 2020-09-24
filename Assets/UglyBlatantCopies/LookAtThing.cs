@@ -5,23 +5,24 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class RadiusThing : MonoBehaviour
+public class LookAtThing : MonoBehaviour
 {
-	public float Radius = 1f;
 	public Transform TrackedObject;
+	[Range(0f, 1f)]
+	public float LookAtThreshold;
 
 #if UNITY_EDITOR
 	private void OnDrawGizmos()
 	{
+		Vector2 lookingForward  = transform.up;
 		Vector2 centre = transform.position;
 		Vector2 trackedObjectPos = TrackedObject.position;
 
-		Vector2 Difference = trackedObjectPos - centre;
+		Vector2 VectorTowardsObject = trackedObjectPos - centre;
 
+		float dotProduct = Vector2.Dot(lookingForward, VectorTowardsObject);
 
-
-
-		if(Difference.magnitude < Radius)
+		if(dotProduct >= LookAtThreshold)
 		{
 			Handles.color = Color.green;
 		}
@@ -29,7 +30,8 @@ public class RadiusThing : MonoBehaviour
 		{
 			Handles.color = Color.red;
 		}
-		Handles.DrawWireDisc(centre, Vector3.forward, Radius);
+		Handles.DrawLine(centre, trackedObjectPos);
+		Handles.DrawLine(centre, centre + lookingForward);
 	}
 
 #endif
