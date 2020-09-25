@@ -19,7 +19,7 @@ public class RadiusThing : MonoBehaviour
 		Vector2 Difference = trackedObjectPos - centre;
 
 
-
+		//Freya did a cooler optimized thing but copying that felt like cheating
 
 		if(Difference.magnitude < Radius)
 		{

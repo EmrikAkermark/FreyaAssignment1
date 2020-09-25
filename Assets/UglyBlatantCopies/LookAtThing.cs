@@ -11,20 +11,17 @@ public class LookAtThing : MonoBehaviour
 	[Range(0f, 1f)]
 	public float LookAtThreshold;
 
-	public float dotProd;
-	public Vector2 lookingForward;
-
 #if UNITY_EDITOR
 	private void OnDrawGizmos()
 	{
-		lookingForward  = transform.up;
+		Vector2 facingVector  = transform.up;
 		Vector2 centre = transform.position;
 		Vector2 trackedObjectPos = TrackedObject.position;
 
 		Vector2 VectorTowardsObject = trackedObjectPos - centre;
 		VectorTowardsObject.Normalize();
 
-		dotProd = Vector2.Dot(lookingForward, VectorTowardsObject);
+		float dotProd = Vector2.Dot(facingVector, VectorTowardsObject);
 
 		if(dotProd >= LookAtThreshold)
 		{
@@ -35,7 +32,7 @@ public class LookAtThing : MonoBehaviour
 			Handles.color = Color.red;
 		}
 		Handles.DrawLine(centre, trackedObjectPos);
-		Handles.DrawLine(centre, centre + lookingForward);
+		Handles.DrawLine(centre, centre + facingVector);
 	}
 
 #endif

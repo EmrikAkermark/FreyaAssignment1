@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -19,8 +18,6 @@ public class WorldToLocal : MonoBehaviour
     {
         FindWorldPosition();
         FindLocalPosition();
-
-
     }
 
     private void FindWorldPosition()
@@ -32,7 +29,7 @@ public class WorldToLocal : MonoBehaviour
         //To get the child's world position, we simply add the offset to the parent's
         //world position! The offset takes care of any rotation the parent might have.
         ChildWorldPosition = new Vector2(ParentTransform.position.x + LocalToWorldOffset.x, ParentTransform.position.y + LocalToWorldOffset.y);
-        LocalToWorldPosition.text = $"The local positions world coordinates are {ChildWorldPosition.x}, {ChildWorldPosition.y}";
+        LocalToWorldPosition.text = $"The Child Object's world coordinates are {ChildWorldPosition.x}, {ChildWorldPosition.y}";
     }
 
     private void FindLocalPosition()
@@ -47,7 +44,7 @@ public class WorldToLocal : MonoBehaviour
         //intersects with the Parent.right and Parent.up!
         ParentToWorldLocalVector.x = Vector2.Dot(ParentTransform.right, ParentToWorldVector);
         ParentToWorldLocalVector.y = Vector2.Dot(ParentTransform.up, ParentToWorldVector);
-        WorldToLocalPosition.text = $"The world positions local coordinates are {ParentToWorldLocalVector.x}, {ParentToWorldLocalVector.y}";
+        WorldToLocalPosition.text = $"The World Object's local coordinates are {Mathf.Round(ParentToWorldLocalVector.x)}, {Mathf.Round(ParentToWorldLocalVector.y)}";
 
 
         //I made this for myself, if both magnitudes are equal, the I've done it right.

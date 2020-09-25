@@ -136,7 +136,7 @@ GameObject:
   m_Layer: 0
   m_Name: RadiusThing
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -154,8 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackedObject: {fileID: 920413147}
   LookAtThreshold: 0
-  dotProd: 0.45407027
-  lookingForward: {x: -0.13977316, y: 0.99018353}
 --- !u!4 &631460622
 Transform:
   m_ObjectHideFlags: 0
@@ -163,13 +161,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631460620}
-  m_LocalRotation: {x: -0, y: -0, z: 0.07005872, w: 0.9975429}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.6896361, w: 0.72415614}
+  m_LocalPosition: {x: -1.66, y: -1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.035}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.203}
 --- !u!1 &920413146
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +180,7 @@ GameObject:
   m_Layer: 0
   m_Name: TrackedObject
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

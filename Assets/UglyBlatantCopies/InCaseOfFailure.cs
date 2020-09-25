@@ -15,6 +15,9 @@ public class InCaseOfFailure : MonoBehaviour
 
     private IEnumerator SwitchColours()
     {
+        Word1.text = "I'M";
+        Word2.text = "DENSE";
+
         while(true)
         {
             Word1.color = Color.black;
